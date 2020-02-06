@@ -1,0 +1,120 @@
+\documentclass[MathSerif]{beamer}
+
+\usetheme{UiB}
+
+\usepackage{array}
+\usepackage{graphicx}
+
+\title[CFD-note] % (optional, only for long titles)
+{The example title of Beamer}
+\subtitle{with a little subtitle}
+\author[Author, Anders] % (optional, for multiple authors)
+{F.~Author\inst{1} \and S.~Anders\inst{2}}
+\institute[] % (optional)
+{
+  \inst{1}%
+  Institute of Computer Science\\
+  University Here
+  \and
+  \inst{2}%
+  Institute of Theoretical Philosophy\\
+  University There
+}
+\date[Date 2004] % (optional)
+{CFD-note, 2020}
+
+\subject{Computational Fliud Dynamics}
+
+
+\begin{document}
+
+
+\section[First]{The First Section}
+% table of content =============================
+\begin{frame}
+	\frametitle{Table of Contents}
+	\tableofcontents[]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mathematics}
+
+    \begin{theorem}[Fermat's little theorem]
+        For a prime~\(p\) and \(a \in \mathbb{Z}\) it holds that \(a^p \equiv a \pmod{p}\).
+    \end{theorem}
+
+    \begin{proof}
+        The invertible elements in a field form a group under multiplication.
+        In particular, the elements
+        \begin{equation*}
+            1, 2, \ldots, p - 1 \in \mathbb{Z}_p
+        \end{equation*}
+        form a group under multiplication modulo~\(p\).
+        This is a group of order \(p - 1\).
+        For \(a \in \mathbb{Z}_p\) and \(a \neq 0\) we thus get \(a^{p-1} = 1 \in \mathbb{Z}_p\).
+        The claim follows.
+    \end{proof}
+\end{frame}
+
+
+% a normal slide ===============================
+\begin{frame}
+
+\frametitle{This is the first slide}
+\begin{enumerate}
+\item First item
+\begin{itemize}
+\item First subitem
+\item Second subitem
+\end{itemize}
+\item Second item
+\item Third item
+\end{enumerate}
+\[ y = \sum {i \in A} a i x i \]
+\end{frame}
+  
+
+  
+\section[Second]{The Second Section}
+\begin{frame}
+
+   \begin{block}{This is a Block}
+      This is important information
+   \end{block}
+
+   \begin{alertblock}{This is an Alert block}
+   This is an important alert
+   \end{alertblock}
+
+   \begin{exampleblock}{This is an Example block}
+   This is an example 
+   \end{exampleblock}
+
+\end{frame}
+  
+\begin{frame}{Example of columns 1}
+    \begin{columns}[T] % the "c" option specifies center vertical alignment
+    \column{.5\textwidth} % column designated by a command
+     There are two handy environments for structuring a slide: "blocks", which divide the slide (horizontally) into headed sections, and "columns" which divides a slide (vertically) into columns. Blocks and columns can be used inside each other.
+    \column{.5\textwidth}
+     There are two handy environments for structuring a slide: "blocks", which divide the slide (horizontally) into headed sections, and "columns" which divides a slide (vertically) into columns. Blocks and columns can be used inside each other. \\ into two lines
+    \end{columns}
+\end{frame}
+% etc
+\subsection{Example}
+
+\begin{frame}
+    \frametitle{Mathematics}
+
+    \begin{example}
+        The function \(\phi \colon \mathbb{R} \to \mathbb{R}\) given by \(\phi(x) = 2x\) is continuous at the point \(x = \alpha\),
+        because if \(\epsilon > 0\) and \(x \in \mathbb{R}\) is such that \(\lvert x - \alpha \rvert < \delta = \frac{\epsilon}{2}\),
+        then
+        \begin{equation*}
+            \lvert \phi(x) - \phi(\alpha)\rvert = 2\lvert x - \alpha \rvert < 2\delta = \epsilon.
+        \end{equation*}
+    \end{example}
+\end{frame}
+
+
+\end{document}
