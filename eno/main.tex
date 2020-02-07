@@ -4,32 +4,32 @@
 
 \usepackage{array}
 \usepackage{graphicx}
+\usepackage{graphics}
 
 \title[CFD-note] % (optional, only for long titles)
-{The example title of Beamer}
-\subtitle{with a little subtitle}
-\author[Author, Anders] % (optional, for multiple authors)
-{F.~Author\inst{1} \and S.~Anders\inst{2}}
-\institute[] % (optional)
-{
-  \inst{1}%
-  Institute of Computer Science\\
-  University Here
-  \and
-  \inst{2}%
-  Institute of Theoretical Philosophy\\
-  University There
-}
-\date[Date 2004] % (optional)
+{Essentially Non-Osicillatory Schemes}
+\subtitle{simple guide}
+\author[Chengsi ZHOU] % (optional, for multiple authors)
+{Chengsi ZHOU}
+%\institute[] % (optional)
+%{ 
+%  \inst{1}%
+%  Institute of Computer Science\\
+%  University Here
+%  \and
+%  \inst{2}%
+%  Institute of Theoretical %Philosophy\\
+%  University There
+%}
+\date[Feb 2020] % (optional)
 {CFD-note, 2020}
 
-\subject{Computational Fliud Dynamics}
+%\subject{Computational Fliud %Dynamics}
 
 
 \begin{document}
 
-
-\section[First]{The First Section}
+\section[Definition]{One Space Dimension}
 % table of content =============================
 \begin{frame}
 	\frametitle{Table of Contents}
@@ -37,40 +37,36 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Mathematics}
-
-    \begin{theorem}[Fermat's little theorem]
-        For a prime~\(p\) and \(a \in \mathbb{Z}\) it holds that \(a^p \equiv a \pmod{p}\).
-    \end{theorem}
-
-    \begin{proof}
-        The invertible elements in a field form a group under multiplication.
-        In particular, the elements
-        \begin{equation*}
-            1, 2, \ldots, p - 1 \in \mathbb{Z}_p
-        \end{equation*}
-        form a group under multiplication modulo~\(p\).
-        This is a group of order \(p - 1\).
-        For \(a \in \mathbb{Z}_p\) and \(a \neq 0\) we thus get \(a^{p-1} = 1 \in \mathbb{Z}_p\).
-        The claim follows.
-    \end{proof}
+    \frametitle{Definition of One Space Dimension}
+	Given a grid 
+	\[ a = x_{\frac{1}{2}} < x_{\frac{3}{2}} < ... < x_{N-\frac{1}{2}} < x_{N + \frac{1}{2}} = b \]
+\begin{center}
+	\includegraphics[trim={0 5mm 0 5mm},clip]{./fig/one_dim_define.pdf}
+\end{center}
+	We define 
+\begin{description}
+	\item[Cells] \( I_i = [x_{i-\frac{1}{2}}, x_{i+\frac{1}{2}}]\)
+	\item[Cell centers] \( x_i = \frac{1}{2} (x_{i-\frac{1}{2}} + x_{i+\frac{1}{2}})\)
+	\item[Cell sizes] \( \Delta x = x_{i+\frac{1}{2}} - x_{i-\frac{1}{2}}\)
+\end{description}
 \end{frame}
 
-
-% a normal slide ===============================
 \begin{frame}
 
-\frametitle{This is the first slide}
-\begin{enumerate}
-\item First item
-\begin{itemize}
-\item First subitem
-\item Second subitem
-\end{itemize}
-\item Second item
-\item Third item
-\end{enumerate}
-\[ y = \sum {i \in A} a i x i \]
+\frametitle{One Dimensional Reconstruction}
+
+\begin{columns}[T] % the "c" option specifies center vertical alignment
+    \column{.4\textwidth} % column designated by a command
+    Given the cell averages of a function \( v(x) \) 
+    \[ \bar{v_i} \equiv \frac{1}{\Delta x_i}  \int_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}} v(\xi) d \xi\]
+    find a polynomial $p_i(x)$, of degree at most $k-1$, for each cell $I_i$. It is a $k$-th order accurate approximation to $v(x)$
+    \[p_i(x) = v(x) + O(\Delta x^k)\]
+    \[x \in I_i\]
+    \[i=1,...,N\]
+    \column{.6\textwidth}
+    \includegraphics[trim={0 0mm 0 0mm},clip]{./fig/vx_define.pdf}
+    \end{columns}
+
 \end{frame}
   
 
