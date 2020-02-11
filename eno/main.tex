@@ -68,6 +68,24 @@
     \end{columns}
 
 \end{frame}
+
+
+\begin{frame}
+
+\frametitle{One Dimensional Reconstruction}
+
+$p_i(x)$ gives approximations to the function $v(x)$ at the cell boundaries:
+
+\[ v^{-}_{i+\frac{1}{2}} \leftarrow p_i(x_{i+\frac{1}{2}}) = v(x_{i+\frac{1}{2}}) + O(\Delta x^k)\]
+
+\[ v^{+}_{i-\frac{1}{2}} \leftarrow p_i(x_{i-\frac{1}{2}}) = v(x_{i-\frac{1}{2}}) + O(\Delta x^k)\]
+
+\[ i = 1, ..., N\]
+\begin{center}
+\includegraphics[trim={0 0mm 0 2mm},clip]{./fig/vfmp_define.pdf}
+\end{center}
+
+\end{frame}
   
 
   
