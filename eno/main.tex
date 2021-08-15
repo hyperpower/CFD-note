@@ -1,4 +1,4 @@
-\documentclass[MathSerif]{beamer}
+\documentclass[MathSerif,aspectratio=169]{beamer}
 
 \usetheme{UiB}
 
@@ -21,7 +21,7 @@
 %  Institute of Theoretical %Philosophy\\
 %  University There
 %}
-\date[Feb 2020] % (optional)
+\date[Feb 2020] % (optional)7
 {CFD-note, 2020}
 
 %\subject{Computational Fliud %Dynamics}
@@ -53,17 +53,17 @@
 
 \begin{frame}
 
-\frametitle{One Dimensional Reconstruction}
+\frametitle{Cell Averages}
 
 \begin{columns}[T] % the "c" option specifies center vertical alignment
     \column{.4\textwidth} % column designated by a command
     Given the cell averages of a function \( v(x) \) 
     \[ \bar{v_i} \equiv \frac{1}{\Delta x_i}  \int_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}} v(\xi) d \xi\]
     find a polynomial $p_i(x)$, of degree at most $k-1$, for each cell $I_i$. It is a $k$-th order accurate approximation to $v(x)$
-    \[p_i(x) = v(x) + O(\Delta x^k)\]
+    \[v(x) = p_i(x) + O(\Delta x^k)\]
     \[x \in I_i\]
     \[i=1,...,N\]
-    \column{.6\textwidth}
+    \column{.5\textwidth}
     \includegraphics[trim={0 0mm 0 0mm},clip]{./fig/vx_define.pdf}
     \end{columns}
 

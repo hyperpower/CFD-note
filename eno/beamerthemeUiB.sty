@@ -143,6 +143,7 @@
 
 %% Official colours:
 \definecolor{uibred}  {HTML}{EA4235} % db3f3d
+
 \definecolor{uibblue} {HTML}{4385F5} % 4ea0b7
 \definecolor{uibgreen}{HTML}{34A853} % 789a5b
 \definecolor{uibgray} {HTML}{d0cac2} % d0cac2
@@ -175,13 +176,11 @@
 \setbeamercolor{block title example}{fg = white,
                                      bg = uibgreen}
 \setbeamercolor{block body example} {bg = uibgray}
-\setbeamercolor{block title alerted}{fg = white,
-                                     bg = uibblue}
+\setbeamercolor{block title alerted}{fg = white, bg = uibblue}
 \setbeamercolor{block body alerted} {bg = uibgray}
 \setbeamercolor{alerted text} {fg = uibblue}
 \setbeamercolor{footnote mark}{fg = uibred}
-\setbeamercolor{section in head/foot}{fg = white,
-                                      bg = uibred}
+\setbeamercolor{section in head/foot}{fg = white,bg = uibred}
 \setbeamercolor{section in toc}{fg = black}
 \setbeamercolor{bibliography entry location}{fg = structure}
 
@@ -261,7 +260,6 @@
 
 \setbeamertemplate{frametitle}
 {
-    \vbox
     {
         \strut\insertframetitle\strut
     }
@@ -272,7 +270,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\setbeamertemplate{headline}{ \vspace*{1.7 mm} }
+\setbeamertemplate{headline}{ \vspace*{0.1 mm} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,22 +280,14 @@
 {
     \hbox to \paperwidth
     {%
-        \begin{beamercolorbox}[wd = 0.33\paperwidth,
-                               ht = 2.25ex,
-                               dp = 1ex]
-                              {section in head/foot}
-
+        \begin{beamercolorbox}[wd = 0.33\paperwidth, ht = 2.25ex, dp = 1ex]{section in head/foot}
                 \hfil
                 \usebeamerfont{author in head/foot}
-                \insertshortauthor
+                \insertsection
                 \hfil
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[wd = 0.34\paperwidth,
-                               ht = 2.25ex,
-                               dp = 1ex]
-                              {section in head/foot}
-
-                \hfil
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd = 0.34\paperwidth,ht = 2.25ex, dp = 1ex]{section in head/foot}
+		       \hfil
                 \usebeamerfont{title in head/foot}
                 \insertshorttitle
                 \hfil
@@ -310,7 +300,7 @@
                 \hfil
                 \usebeamerfont{date in head/foot}
                 \insertshortdate 
-                \hspace*{5em}
+                \hspace*{7em}
                 \insertframenumber{} / \inserttotalframenumber
                 \hspace{0ex} %original 3ex
         \end{beamercolorbox}
