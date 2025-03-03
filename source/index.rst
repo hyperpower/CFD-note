@@ -11,6 +11,7 @@ Welcome to carpio-doc's documentation!
    :caption: Contents:
 
    poisson/poisson
+   structure/structure_fv
 
 
 Restructure examples
