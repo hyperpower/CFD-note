@@ -80,9 +80,9 @@ def plot(path):
     ax.set_aspect('equal')
 
     plt.tight_layout()
-    plt.savefig(path + "structure_fv")
+    plt.savefig(path + "/structure_fv")
 
 
 if __name__ == '__main__':
-    plot(os.path.join(__file__, "../"))
+    plot(DIR_THIS)
     # print("a")

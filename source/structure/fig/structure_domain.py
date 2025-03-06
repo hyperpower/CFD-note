@@ -14,6 +14,7 @@ from env_para import *
 
 
 def plot(path):
+    print(path)
     # print(os.path.abspath(p))
     plt.rc('mathtext', fontset='cm')  # Computer Modern 字体，类似 LaTeX 风格
     plt.rc('font', family='serif')
@@ -57,10 +58,10 @@ def plot(path):
     ax.set_aspect('equal')
 
     plt.tight_layout()
-    plt.savefig(path + "structure_domain")
+    plt.savefig(path + "/structure_domain")
 
 # plot(DIR_CASE+"/fig")
 
 if __name__ == '__main__':
-    plot(os.path.join(__file__, "../"))
+    plot(DIR_THIS)
     # print("a")

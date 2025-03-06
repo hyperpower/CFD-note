@@ -19,10 +19,14 @@ def plot_file_to_run(root):
 
 def run_plot_file(lpy):
     for path in lpy:
+        cwd = os.getcwd()
+        os.chdir(path.parent)
+        print(path.parent)
         result = subprocess.run(["python3", str(path)], capture_output=True, text=True)
         if(result.returncode != 0):
             print("std cout", result.stdout)
             print("std err", result.stderr)
+        os.chdir(cwd)
         
 
 run_plot_file(plot_file_to_run(Path(_CUR_ + "/source")))
