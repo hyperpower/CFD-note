@@ -10,6 +10,7 @@ Welcome to carpio-doc's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   basic/norm_define
    poisson/poisson
    structure/structure_fv
 

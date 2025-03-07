@@ -24,7 +24,7 @@ def plot(path):
     x = [0, 0, 5, 5, 0]
     y = [0, 5, 5, 0, 0]
 
-    fig, ax = plt.subplots(figsize=(7.5, 6), dpi=300)
+    fig, ax = plt.subplots(figsize=(7.5, 5), dpi=300)
 
     ax.plot(x, y, label=r'Boundary', color=colors[0], linewidth=2)
     rect = Rectangle((0, 0), 5, 5, 
@@ -80,9 +80,9 @@ def plot(path):
     ax.set_aspect('equal')
 
     plt.tight_layout()
-    plt.savefig(path + "structure_fv")
+    plt.savefig(path + "/structure_fv")
 
 
 if __name__ == '__main__':
-    plot(os.path.join(__file__, "../"))
+    plot(DIR_THIS)
     # print("a")

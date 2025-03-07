@@ -14,6 +14,7 @@ from env_para import *
 
 
 def plot(path):
+    print(path)
     # print(os.path.abspath(p))
     plt.rc('mathtext', fontset='cm')  # Computer Modern 字体，类似 LaTeX 风格
     plt.rc('font', family='serif')
@@ -26,7 +27,7 @@ def plot(path):
     y = [0, 5, 5, 0, 0]
 
     # 创建图形
-    fig, ax = plt.subplots(figsize=(6, 6), dpi=300)
+    fig, ax = plt.subplots(figsize=(7.5, 5), dpi=300)
 
     # 绘制正弦曲线
     ax.plot(x, y, label=r'Boundary', color=colors[0], linewidth=2)
@@ -51,16 +52,17 @@ def plot(path):
 
     # ax.grid(True, linestyle='--', alpha=0.7)
     ax.legend(fontsize=12)
+    ax.legend(loc="upper left", bbox_to_anchor=(1, 1))
 
     ax.set_xlim(-1, 6)
     ax.set_ylim(-1, 6)
     ax.set_aspect('equal')
 
     plt.tight_layout()
-    plt.savefig(path + "structure_domain")
+    plt.savefig(path + "/structure_domain")
 
 # plot(DIR_CASE+"/fig")
 
 if __name__ == '__main__':
-    plot(os.path.join(__file__, "../"))
+    plot(DIR_THIS)
     # print("a")
