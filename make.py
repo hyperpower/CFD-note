@@ -24,8 +24,7 @@ def run_plot_file(lpy):
             print("std cout", result.stdout)
             print("std err", result.stderr)
         
-
-run_plot_file(plot_file_to_run(Path(_CUR_ + "/source")))
+# run_plot_file(plot_file_to_run(Path(_CUR_ + "/source")))
 
 def pre_build(path):
     fplot = plot_file_to_run(Path(path + "/source"))

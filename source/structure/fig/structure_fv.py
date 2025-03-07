@@ -24,7 +24,7 @@ def plot(path):
     x = [0, 0, 5, 5, 0]
     y = [0, 5, 5, 0, 0]
 
-    fig, ax = plt.subplots(figsize=(7, 6), dpi=300)
+    fig, ax = plt.subplots(figsize=(7.5, 6), dpi=300)
 
     ax.plot(x, y, label=r'Boundary', color=colors[0], linewidth=2)
     rect = Rectangle((0, 0), 5, 5, 
@@ -67,7 +67,7 @@ def plot(path):
     
     bvx = [1, 1, 2, 2, 1]
     bvy = [1, 2, 2, 1, 1]
-    ax.plot(bvx, bvy, label=r'Control Volume Boundary', color=colors[1], linewidth=2)
+    ax.plot(bvx, bvy, label="Control Volume\nBoundary", color=colors[1], linewidth=2)
 
     ax.set_xlabel(r'$x$', fontsize=16)
     ax.set_ylabel(r'$y$', fontsize=16)

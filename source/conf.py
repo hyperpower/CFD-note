@@ -94,9 +94,9 @@ html_theme_options = {
     'font_size'       : '18px'
 }
 
-plot_html_show_source_link = False  # Hide source code link
-plot_html_show_formats = True  # Hide format download links
-plot_formats = [('png', 300), 'pdf']
+# plot_html_show_source_link = False  # Hide source code link
+# plot_html_show_formats = True  # Hide format download links
+# plot_formats = [('png', 300), 'pdf']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
