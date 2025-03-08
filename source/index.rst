@@ -18,7 +18,6 @@ Welcome to carpio-doc's documentation!
 Restructure examples
 ---------------------
 .. toctree::
-   :numbered:
    :maxdepth: 1
    
    example

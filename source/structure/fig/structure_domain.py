@@ -39,7 +39,7 @@ def plot(path):
     # mathbb
     # mathcal
     # mathscr
-    ax.text(2.5, 2.5, r'$\mathbb{Z}^2$', 
+    ax.text(2.5, 2.5, r'$\Omega^2$', 
             fontsize=16, color='black', ha='center', va='bottom')
     ax.plot([1.7, 2], [5, 5.2], color="k", linewidth=1)
     ax.text(2., 5.2, r'$\Gamma$', 
