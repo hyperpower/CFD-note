@@ -13,6 +13,7 @@ Welcome to carpio-doc's documentation!
    basic/norm_define
    poisson/poisson
    structure/structure_fv
+   appendix/list_maclaurin_series
 
 
 Restructure examples

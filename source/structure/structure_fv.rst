@@ -2,7 +2,7 @@ Cell-Centered Structure Grid
 ===========================================
 
 Define a two-dimensional region in the real number space,
-where the region is denoted by :math:`\mathbb{Z}` and 
+where the region is denoted by :math:`\Omega` and 
 its boundary is denoted by :math:`\Gamma`, see :numref:`fig-dd`.
 
 .. _fig-dd:
