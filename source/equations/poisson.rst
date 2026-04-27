@@ -174,8 +174,8 @@ Derivative of :math:`\phi(x)` at :math:`x_i`, :math:`\phi^{\prime}(x_i)`, can be
 .. math::
     :label: dxck1
 
-    \phi(x_{i+1}) - \phi(x_{i+1}) &\approx 2h \phi^{\prime}(x_i) \\
-    \phi^{\prime}(x_i) &\approx \frac{\phi(x_{i+1}) - \phi(x_{i+1})}{2h} \\
+    \phi(x_{i+1}) - \phi(x_{i-1}) &\approx 2h \phi^{\prime}(x_i) \\
+    \phi^{\prime}(x_i) &\approx \frac{\phi(x_{i+1}) - \phi(x_{i-1})}{2h} \\
 
 Here, we can introduce 1D difference operators which used in [Spotz1995]_ , summarized in :numref:`dop1d`
 
@@ -184,7 +184,7 @@ Here, we can introduce 1D difference operators which used in [Spotz1995]_ , summ
    :widths: 30, 30, 30
    :name: dop1d
 
-   Center, :math:`\delta_x \phi_i`, :math:`\frac{\phi(x_{i+1}) - \phi(x_{i+1})}{2h}`
+   Center, :math:`\delta_x \phi_i`, :math:`\frac{\phi(x_{i+1}) - \phi(x_{i-1})}{2h}`
    Forward, :math:`\delta_x^+ \phi_i`, :math:`\frac{\phi(x_{i+1}) - \phi(x_{i})}{h}`
    Backward, :math:`\delta_x^- \phi_i`, :math:`\frac{\phi(x_{i}) - \phi(x_{i-1})}{h}`
 
@@ -216,6 +216,7 @@ Second order derivative is combination of 2nd derivatives on each dimension. For
 :math:`\phi_i = \phi(x_i)`, :math:`\phi_{i,j} = \phi(x_i, y_i)`, :math:`\phi_{i,j,k} = \phi(x_i, y_i, z_k)`.
 
 - 2-D 2nd Order Derivative
+
 .. math::
 
     \Delta \phi (x_i, y_j)  &=  \frac{\partial^2 \phi_{i,j}}{\partial x^2} + \frac{\partial^2 \phi_{i,j}}{\partial y^2} \\
@@ -230,6 +231,7 @@ Second order derivative is combination of 2nd derivatives on each dimension. For
 
 
 - 3-D 2nd Order Derivative
+
 .. math::
 
     \Delta \phi (x_i, y_j, z_k)  &=  \frac{\partial^2 \phi_{i,j,k}}{\partial x^2} + \frac{\partial^2 \phi_{i,j,k}}{\partial y^2} + \frac{\partial^2 \phi_{i,j,k}}{\partial z^2} \\

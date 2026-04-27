@@ -1,5 +1,7 @@
 import argparse
 import os
+import sys
+import webbrowser
 # sphinx should be installed
 import subprocess
 from sphinx.cmd.build import main as sphinx_main
@@ -12,7 +14,7 @@ from pathlib import Path
 def plot_file_to_run(root):
     lp = []
     for file in root.rglob("*.py"):
-        if(file.parent.name == "fig"):
+        if(file.parent.name == "fig_script"):
             lp.append(file)
     return lp
 
@@ -21,7 +23,7 @@ def run_plot_file(lpy):
         cwd = os.getcwd()
         os.chdir(path.parent)
         print(path.parent)
-        result = subprocess.run(["python3", str(path)], capture_output=True, text=True)
+        result = subprocess.run([sys.executable, str(path)], capture_output=True, text=True)
         if(result.returncode != 0):
             print("std cout", result.stdout)
             print("std err", result.stderr)
@@ -54,6 +56,30 @@ def build_doc(path):
     sphinx_main(args)
 
 
+def open_html_home(path):
+    html_home = Path(path) / "build" / "index.html"
+    if not html_home.is_file():
+        print(
+            "Error: build/index.html was not found. Run `python make.py` to build the documentation first.",
+            file=sys.stderr,
+        )
+        return 1
+
+    webbrowser.open(html_home.resolve().as_uri())
+    return 0
+
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Build and open the CFD-note documentation.")
+    parser.add_argument(
+        "--open",
+        action="store_true",
+        help="Open build/index.html without rebuilding.",
+    )
+    args = parser.parse_args()
+
+    if args.open:
+        sys.exit(open_html_home(_CUR_))
+
     pre_build(_CUR_)
     build_doc(_CUR_)

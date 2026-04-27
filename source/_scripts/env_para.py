@@ -10,7 +10,7 @@ DIR_SOURCE   = os.path.abspath(os.path.join(__file__, "../../"))
 DIR_PROJECT  = os.path.abspath(os.path.join(__file__, "../../../"))
 # DIR_DATA     = os.path.abspath(os.path.join(DIR_PROJECT, "./data/"))
 # DIR_FIG      = os.path.abspath(os.path.join(DIR_PROJECT, "./fig/"))
-DIR_TEST     = os.path.abspath(os.path.join(DIR_PROJECT, "./test/"))
+DIR_TEST     = os.path.abspath(os.path.join(DIR_PROJECT, "./source/_test/"))
 
 # os info
 OsName    = platform.system()
@@ -18,6 +18,29 @@ OsVersion = platform.version()
 OsInfo    = platform.platform()
 OsRelease    = platform.release()
 OsArchitecture = platform.architecture()
+
+# define plotting colors
+COLOR_BLUE   = "#05A6F0"
+COLOR_RED    = "#F35325"
+COLOR_GREEN  = "#81BC06"
+COLOR_YELLOW = "#FFBA08"
+COLOR_PURPLE = "#986DBF"
+
+COLOR_LIST = [
+    COLOR_BLUE,
+    COLOR_RED,
+    COLOR_GREEN,
+    COLOR_YELLOW,
+    COLOR_PURPLE,
+]
+
+COLOR_MAP = {
+    "blue": COLOR_BLUE,
+    "red": COLOR_RED,
+    "green": COLOR_GREEN,
+    "yellow": COLOR_YELLOW,
+    "purple": COLOR_PURPLE,
+}
 
 # define color of terminal
 class TermColor():

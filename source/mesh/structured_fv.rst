@@ -1,4 +1,4 @@
-Cell-Centered Structure Grid
+Cell-Centered Structured Grid
 ===========================================
 
 Define a two-dimensional region in the real number space,
@@ -24,4 +24,4 @@ with well-defined geometric relationships between neighboring cells.
 .. _fig-cell:
 .. figure:: fig/structure_fv.png
     
-    Structure Grid and cells definition 
+    Structured Grid and cells definition 

@@ -14,6 +14,7 @@ Below are the definitions of the **L₁ norm** (1-norm), **L₂ norm** (2-norm),
 
 .. math::
    :label: eq:norm1_v
+
    \|x\|_1 = \sum_{i=1}^n |x_i|
 
 - **Explanation**:  
@@ -29,6 +30,7 @@ Below are the definitions of the **L₁ norm** (1-norm), **L₂ norm** (2-norm),
 
 .. math::
    :label: eq:norm2-v
+
    \|x\|_2 = \sqrt{\sum_{i=1}^n x_i^2}
 
 - **Explanation**:  
@@ -44,6 +46,7 @@ Infinity Norm (Maximum Norm)
 
 .. math::
    :label: eq:norminf-v
+
    \|x\|_\infty = \max_{i} |x_i|
 
 - **Explanation**:  
@@ -74,6 +77,7 @@ Below are the definitions of some commonly used matrix norms for an :math:`m \ti
 
 - **Definition**:  
   The maximum absolute column sum of the matrix:  
+
 .. math::
    :label: eq:norm1-m
 
@@ -137,24 +141,26 @@ Frobenius Norm
 
 
 Matrix Norm Summary Table
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------+-----------------------------------------+
-| Norm          | Formula                                 | 
-+===============+=========================================+
-| 1-Norm        | :math:`\max_{j} \sum_{i=1}^m |a_{ij}|`  | 
-+---------------+-----------------------------------------+
-| 2-Norm        | :math:`\sigma_{\max}(A)`                | 
-+---------------+-----------------------------------------+
-| Infinity Norm | :math:`\max_{i} \sum_{j=1}^n |a_{ij}|`  |
-+---------------+-----------------------------------------+
-| Frobenius     | :math:`\sqrt{\sum_{i=1}^m \sum_{j=1}^n}`|
-+---------------+-----------------------------------------+
+.. list-table::
+   :header-rows: 1
+
+   * - Norm
+     - Formula
+   * - 1-Norm
+     - :math:`\max_{j} \sum_{i=1}^m |a_{ij}|`
+   * - 2-Norm
+     - :math:`\sigma_{\max}(A)`
+   * - Infinity Norm
+     - :math:`\max_{i} \sum_{j=1}^n |a_{ij}|`
+   * - Frobenius
+     - :math:`\sqrt{\sum_{i=1}^m \sum_{j=1}^n |a_{ij}|^2}`
 
 Norm definitions in Finite Volume Mesh
 ----------------------------------------
 
-Finite Volume Mesh definition can be found in :doc:`../structure/structure_fv`. 
+Finite Volume Mesh definition can be found in :doc:`../mesh/structured_fv`. 
 The definitions can be found in [Devendran2017]_.
 
 Given a computational domain :math:`\Omega` whose resolution is :math:`h`, 
@@ -196,8 +202,8 @@ Infinity Norm
    \|E\|_{\infty}=\max _{i \in \Omega}\left|E_i\right|
 
 
-Norm definitions in Finite Deference Mesh
-----------------------------------------
+Norm definitions in Finite Difference Mesh
+------------------------------------------
 
 1-Norm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

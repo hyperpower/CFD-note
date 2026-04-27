@@ -6,11 +6,13 @@ from matplotlib.patches import Rectangle
 
 DIR_CASE     = os.path.abspath(os.path.join(__file__, "../.."))
 DIR_THIS     = os.path.abspath(os.path.join(__file__, "../"))
+DIR_FIG      = os.path.abspath(os.path.join(DIR_CASE, "fig"))
 DIR_SOURCE   = os.path.abspath(os.path.join(DIR_CASE, "../"))
-DIR_PYSCRIPT = os.path.abspath(os.path.join(DIR_SOURCE, "py_script"))
+DIR_PYSCRIPT = os.path.abspath(os.path.join(DIR_SOURCE, "_scripts"))
 
 sys.path.append(DIR_PYSCRIPT)
 from env_para import *
+from plot_helper import plot_coordinate_2d
 
 
 def plot(path):
@@ -63,13 +65,7 @@ def plot(path):
     ax.text(-1.1, 0.2, r'$\frac{1}{h^2} \times$', weight='bold',
             fontsize=24, color='black', ha='right', va='bottom')
     
-    # corrdinate
-    ax.arrow(-0.75, -0.75, 0.3, 0.0, width = 0.01,fc ="k") 
-    ax.arrow(-0.75, -0.75, 0.0, 0.3, width = 0.01,fc ="k") 
-    ax.text(-0.45, -0.75, r'$x$', 
-             fontsize=16, color='black', ha='right', va='bottom')
-    ax.text(-0.76, -0.45, r'$y$', 
-             fontsize=16, color='black', ha='right', va='bottom')
+    plot_coordinate_2d(ax)
     plt.axis('off') 
 
     # ax.grid(True, linestyle='--', alpha=0.7)
@@ -86,5 +82,6 @@ def plot(path):
 # plot(DIR_CASE+"/fig")
 
 if __name__ == '__main__':
-    plot(DIR_THIS)
+    os.makedirs(DIR_FIG, exist_ok=True)
+    plot(DIR_FIG)
     # print("a")

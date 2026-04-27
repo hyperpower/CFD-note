@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project   = 'carpio-doc'
+project   = 'CFD-note'
 copyright = '2021, zhou chengsi'
 author    = 'zhou chengsi'
 

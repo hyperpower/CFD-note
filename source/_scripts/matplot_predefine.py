@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from cycler import cycler
 from env_para import *
 
 plt.style.use(os.path.join(DIR_PYSCRIPT, "web.mplstyle"))
+plt.rcParams["axes.prop_cycle"] = cycler("color", COLOR_LIST)
 
 def plot_test_fig():
     fig, ax = plt.subplots()

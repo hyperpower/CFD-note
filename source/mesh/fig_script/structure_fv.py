@@ -6,12 +6,14 @@ from matplotlib.patches import Rectangle
 
 DIR_CASE     = os.path.abspath(os.path.join(__file__, "../.."))
 DIR_THIS     = os.path.abspath(os.path.join(__file__, "../"))
+DIR_FIG      = os.path.abspath(os.path.join(DIR_CASE, "fig"))
 DIR_SOURCE   = os.path.abspath(os.path.join(DIR_CASE, "../"))
-DIR_PYSCRIPT = os.path.abspath(os.path.join(DIR_SOURCE, "py_script"))
+DIR_PYSCRIPT = os.path.abspath(os.path.join(DIR_SOURCE, "_scripts"))
 
 sys.path.append(DIR_PYSCRIPT)
 from env_para import *
 
+plt.style.use(os.path.join(DIR_PYSCRIPT, "web.mplstyle"))
 
 def plot(path):
     # print(os.path.abspath(p))
@@ -84,5 +86,6 @@ def plot(path):
 
 
 if __name__ == '__main__':
-    plot(DIR_THIS)
+    os.makedirs(DIR_FIG, exist_ok=True)
+    plot(DIR_FIG)
     # print("a")
