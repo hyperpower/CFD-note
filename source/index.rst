@@ -11,6 +11,10 @@ CFD-note
    :caption: Contents:
 
    basic/norm_define
+   geometry/circle_rectangel_area
+   geometry/ellipse_rectangle_area
+   geometry/line_rectangle_area
+   geometry/rectangle_recatangle_area
    mesh/structured_fv
    equations/poisson
    appendix/list_maclaurin_series
