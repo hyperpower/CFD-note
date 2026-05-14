@@ -16,6 +16,7 @@ CFD-note
    geometry/line_rectangle_area
    geometry/rectangle_recatangle_area
    mesh/structured_fv
+   vof/interface_reconstruction
    equations/poisson
    appendix/list_maclaurin_series
    _examples/rst_example

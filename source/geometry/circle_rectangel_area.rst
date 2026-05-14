@@ -49,14 +49,14 @@
 
 .. math::
 
-   X\in[a,b],\quad Y\in[c,d]
+   X\in[x_a,x_b],\quad Y\in[y_a,y_b]
 
 其中
 
 .. math::
 
-   a=x_1-c_x,\quad b=x_2-c_x,\quad
-   c=y_1-c_y,\quad d=y_2-c_y
+   x_a=x_1-c_x,\quad &x_b=x_2-c_x, \\
+   y_a=y_1-c_y,\quad &y_b=y_2-c_y
 
 在平移后的坐标系中，对一个固定的 :math:`X`，圆内允许的 :math:`Y` 范围为
 
@@ -67,34 +67,60 @@
 因此，在该竖向切片上，圆与矩形的相交线段长度为
 
 .. math::
+   :label: eq:circle-rectangle-lx
 
    L(X)=
    \max\left(
    0,\,
-   \min(d,\sqrt{R^2-X^2})
+   \min(y_b,\sqrt{R^2-X^2})
    -
-   \max(c,-\sqrt{R^2-X^2})
+   \max(y_a,-\sqrt{R^2-X^2})
    \right)
 
 将这个长度沿 :math:`X` 方向积分，就得到圆形与矩形的相交面积：
 
 .. math::
 
-   A=\int_a^b
+   A=\int_{x_a}^{x_b}
    \max\left(
    0,\,
-   \min(d,\sqrt{R^2-X^2})
+   \min(y_b,\sqrt{R^2-X^2})
    -
-   \max(c,-\sqrt{R^2-X^2})
+   \max(y_a,-\sqrt{R^2-X^2})
    \right)
    \,dX
+
+:eq:`eq:circle-rectangle-lx` 使用了max和min函数，所以这个函数就变成了分段函数。其中：
+
+.. math::
+
+   \text{Arc}(X)=\sqrt{R^2-X^2}
+
+对 :math:`\text{Arc}(X)` 积分时，可以使用圆弧积分的原函数：
+
+.. math::
+
+   \int \text{Arc}(X)\,dX
+   &=
+   \int \sqrt{R^2-X^2}\,dX \\
+   &=
+   \frac{1}{2}
+   \left(
+   X\sqrt{R^2-X^2}
+   +R^2\arcsin\frac{X}{R}
+   \right)
 
 实际计算时，只有 :math:`|X|\le R` 的部分可能有贡献，因此积分区间可以限制为
 
 .. math::
 
-   X\in[\max(a,-R),\min(b,R)]
+   X\in[\max(x_a,-R),\min(x_b,R)]
 
+另外，:eq:`eq:circle-rectangle-lx` 中的 :math:`\max(y_a,-\sqrt{R^2-X^2})` 
+和 :math:`\min(y_b,\sqrt{R^2-X^2})` 也会导致分段情况。
+
+因此，在对 :math:`L(X)` 做分段积分时，只需要把每一段写成常数项和
+:math:`\text{Arc}(X)` 的组合，然后分别使用常数函数积分和上面的圆弧积分即可。
 
 二维数值计算流程
 ----------------
@@ -103,9 +129,9 @@
 
 #. 将圆心平移到坐标原点。
 #. 判断矩形是否完全在圆内、完全在圆外或与圆部分相交。
-#. 将积分区间限制在 :math:`[\max(a,-R),\min(b,R)]`。
+#. 将积分区间限制在 :math:`[\max(x_a,-R),\min(x_b,R)]`。
 #. 对每一个积分点 :math:`X`，计算圆内的 :math:`Y` 区间。
-#. 将圆内 :math:`Y` 区间与矩形的 :math:`[c,d]` 区间求交。
+#. 将圆内 :math:`Y` 区间与矩形的 :math:`[y_a,y_b]` 区间求交。
 #. 对交线段长度 :math:`L(X)` 进行数值积分，得到相交面积。
 
 如果矩形四个顶点都在圆内，则相交面积就是矩形面积。
@@ -148,15 +174,15 @@
 
 .. math::
 
-   X\in[a,b],\quad Y\in[c,d],\quad Z\in[e,f]
+   X\in[x_a,x_b],\quad Y\in[y_a,y_b],\quad Z\in[z_a,z_b]
 
 其中
 
 .. math::
 
-   a=x_1-c_x,\quad b=x_2-c_x,\quad
-   c=y_1-c_y,\quad d=y_2-c_y,\quad
-   e=z_1-c_z,\quad f=z_2-c_z
+   x_a=x_1-c_x,\quad x_b=x_2-c_x,\quad
+   y_a=y_1-c_y,\quad y_b=y_2-c_y,\quad
+   z_a=z_1-c_z,\quad z_b=z_2-c_z
 
 对固定的 :math:`(X,Y)`，球内允许的 :math:`Z` 范围为
 
@@ -171,21 +197,21 @@
    L(X,Y)=
    \max\left(
    0,\,
-   \min(f,\sqrt{R^2-X^2-Y^2})
+   \min(z_b,\sqrt{R^2-X^2-Y^2})
    -
-   \max(e,-\sqrt{R^2-X^2-Y^2})
+   \max(z_a,-\sqrt{R^2-X^2-Y^2})
    \right)
 
 将该长度在 :math:`X-Y` 平面上积分，就得到球体与长方体的相交体积：
 
 .. math::
 
-   V=\int_a^b\int_c^d
+   V=\int_{x_a}^{x_b}\int_{y_a}^{y_b}
    \max\left(
    0,\,
-   \min(f,\sqrt{R^2-X^2-Y^2})
+   \min(z_b,\sqrt{R^2-X^2-Y^2})
    -
-   \max(e,-\sqrt{R^2-X^2-Y^2})
+   \max(z_a,-\sqrt{R^2-X^2-Y^2})
    \right)
    \,dY\,dX
 
@@ -207,7 +233,7 @@
 #. 判断长方体是否完全在球内、完全在球外或与球部分相交。
 #. 将积分区域限制在球在 :math:`X-Y` 平面上的投影范围内，即 :math:`X^2+Y^2\le R^2`。
 #. 对每一个积分点 :math:`(X,Y)`，计算球内的 :math:`Z` 区间。
-#. 将球内 :math:`Z` 区间与长方体的 :math:`[e,f]` 区间求交。
+#. 将球内 :math:`Z` 区间与长方体的 :math:`[z_a,z_b]` 区间求交。
 #. 对交线段长度 :math:`L(X,Y)` 进行二维数值积分，得到相交体积。
 
 如果长方体八个顶点都在球内，则相交体积就是长方体体积。
